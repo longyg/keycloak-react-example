@@ -16,6 +16,8 @@ export const initKeycloak = (callback) => {
             console.log('keycloak initialized successfully')
             keycloakState.initialized = true
             keycloakState.authenticated = true
+        } else {
+            keycloak.login()
         }
         console.log('after init')
         console.log(keycloakState)
