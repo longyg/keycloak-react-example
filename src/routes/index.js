@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
-import DemoIndex from '../components/demo/DemoIndex'
-import Demo2Index from '../components/demo2/Demo2Index'
+import ProductIndex from '../components/product/ProductIndex'
+import AdminIndex from '../components/admin/AdminIndex'
 
 export default class MyRouter extends Component {
     render() {
         return (
             <Switch>
-                <Route exact path="/app/demo/index" component={DemoIndex}></Route>
-                <Route exact path="/app/demo2/index" component={Demo2Index}></Route>
+                <Route exact path="/app/product/index" component={ProductIndex}></Route>
+                <Route exact path="/app/admin/index" component={AdminIndex}></Route>
             </Switch>
         )
     }

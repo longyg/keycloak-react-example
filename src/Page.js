@@ -8,7 +8,7 @@ export default class Page extends Component {
         return (
             <Router>
                 <Switch>
-                    <Route exact path="/" render={() => <Redirect to="/app/demo/index" push />}></Route>
+                    <Route exact path="/" render={() => <Redirect to="/app/product/index" push />}></Route>
                     {/* <Route path="/app" component={App}></Route> */}
                     <PropsRoute path="/app" {...this.props} component={App}></PropsRoute>
                 </Switch>

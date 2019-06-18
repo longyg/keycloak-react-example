@@ -42,12 +42,16 @@
   height: 100%;
 }
 
-.demo {
-  background-color: antiquewhite;
+.product {
+  background-color: oldlace;
+  padding: 20px;
+  margin: 10px;
 }
 
-.demo2 {
-  background-color: aqua;
+.admin {
+  background-color: honeydew;
+  padding: 20px;
+  margin: 10px;
 }
 
 @keyframes App-logo-spin {

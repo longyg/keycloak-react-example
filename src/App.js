@@ -3,43 +3,16 @@ import logo from './logo.png';
 import './App.css';
 import Routes from './routes'
 import { Link } from 'react-router-dom'
-// import { keycloak, keycloakState, initKeycloak } from './keycloak'
 
-class App extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     keycloak: null,
-  //     keycloakState: null,
-  //     location: props.location.pathname
-  //   }
-  // }
-  // componentDidMount() {
-  //   console.log('App mounted')
-  //   if (!keycloak.authenticated && !keycloakState.initialized) {
-  //     console.log('App start init keycloak')
-  //     initKeycloak(() => {
-  //       console.log('App init keycloak done')
-  //       this.setState({
-  //         keycloak: keycloak,
-  //         keycloakState: keycloakState,
-  //         location: location.pathname
-  //       })
-  //       console.log('App set state done')
-  //     })
-  //   }
-  //   console.log('App mounted done')
-  // }
+export default class App extends Component {
 
-  // componentDidUpdate(prevProps) {
-  //   console.log('==========> App did update')
-  //   console.log(prevProps.location.pathname)
-  //   console.log(location.pathname)
-  //   if (prevProps.location.pathname !== this.props.location.pathname) {
-  //     console.log('location changed')
-  //     console.log(this.props.location.pathname)
-  //   }
-  // }
+  getLoginUser() {
+    let user = ""
+    if (this.props.keycloak && this.props.keycloak.tokenParsed) {
+      user = this.props.keycloak.tokenParsed.preferred_username
+    }
+    return user
+  }
 
   onLogout() {
     if (this.props.keycloak) {
@@ -48,20 +21,17 @@ class App extends Component {
   }
 
   render() {
-    console.log('===> render App')
-    console.log(this.state)
-    console.log(this.props)
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to Keycloak</h2>
           <div className="App-navi">
-            <Link to="/app/demo/index" className="navi">Demo</Link>
-            <Link to="/app/demo2/index" className="navi">Demo2</Link>
+            <Link to="/app/product/index" className="navi">Product</Link>
+            <Link to="/app/admin/index" className="navi">Admin</Link>
           </div>
           <div className="App-user-info">
-            Login User: {this.props.keycloak ? this.props.keycloak.tokenParsed.preferred_username : null} &nbsp;
+            Login User: {this.getLoginUser()} &nbsp;
             <button onClick={this.onLogout.bind(this)} className="btn btn-success" >Logout</button>
           </div>
         </div>
@@ -72,5 +42,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

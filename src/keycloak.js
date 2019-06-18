@@ -8,19 +8,14 @@ export const keycloakState = {
 export const keycloak = Keycloak('/keycloak.json')
 
 export const initKeycloak = (callback) => {
-    console.log('starting to init keycloak')
     keycloak.init({onLoad: "login-required"})
     .success(authenticated => {
-        console.log('keycloak initialized: ' + authenticated)
         if (authenticated) {
-            console.log('keycloak initialized successfully')
             keycloakState.initialized = true
             keycloakState.authenticated = true
         } else {
             keycloak.login()
         }
-        console.log('after init')
-        console.log(keycloakState)
-        callback()
+        callback(keycloak)
     });
 }
