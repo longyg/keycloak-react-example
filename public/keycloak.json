@@ -1,8 +1,14 @@
 {
-    "realm": "demo",
-    "auth-server-url": "http://localhost:8080/auth",
-    "ssl-required": "external",
-    "resource": "keycloak-react-example",
-    "public-client": true,
-    "confidential-port": 0
+  "realm": "demo",
+  "auth-server-url": "http://localhost:8080/auth",
+  "ssl-required": "external",
+  "resource": "keycloak-react-example",
+  "verify-token-audience": true,
+  "credentials": {
+    "secret": "3c54cd03-29f9-49ec-bdad-630ec4a939cf"
+  },
+  "confidential-port": 0,
+  "policy-enforcer": {
+    "on-deny-redirect-to" : "/deny.html"
   }
+}

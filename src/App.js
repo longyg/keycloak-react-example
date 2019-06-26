@@ -3,6 +3,7 @@ import logo from './logo.png';
 import './App.css';
 import Routes from './routes'
 import { Link } from 'react-router-dom'
+import keycloakClient from './keycloak'
 
 export default class App extends Component {
 
@@ -27,8 +28,8 @@ export default class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to Keycloak</h2>
           <div className="App-navi">
-            <Link to="/app/product/index" className="navi">Product</Link>
-            <Link to="/app/admin/index" className="navi">Admin</Link>
+            {keycloakClient.checkRoles(['normal_role']) ? <Link to="/app/product/index" className="navi">Product</Link> : null}
+            {keycloakClient.checkRoles(['admin_role']) ? <Link to="/app/admin/index" className="navi">Admin</Link> : null}
           </div>
           <div className="App-user-info">
             Login User: {this.getLoginUser()} &nbsp;
