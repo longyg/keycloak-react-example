@@ -1,0 +1,4 @@
+{
+    "/app/product/index": ["Product_Role"],
+    "/app/admin/index": ["Admin_Role"]
+}

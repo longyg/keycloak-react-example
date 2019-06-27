@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import admin from '../../images/admin.jpg'
 
-export default class Demo2Index extends Component {
+export default class AdminIndex extends Component {
     render() {
         return (
             <div className="admin">

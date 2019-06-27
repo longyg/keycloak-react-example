@@ -3,6 +3,10 @@
   "auth-server-url": "http://localhost:8080/auth",
   "ssl-required": "external",
   "resource": "keycloak-react-example",
+<<<<<<< HEAD
+  "public-client": true,
+  "confidential-port": 0
+=======
   "verify-token-audience": true,
   "credentials": {
     "secret": "3c54cd03-29f9-49ec-bdad-630ec4a939cf"
@@ -11,4 +15,5 @@
   "policy-enforcer": {
     "on-deny-redirect-to" : "/deny.html"
   }
+>>>>>>> 9d45eb5fc4217385f97401f0180b77648db2651b
 }

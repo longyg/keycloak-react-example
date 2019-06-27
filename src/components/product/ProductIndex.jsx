@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import product from '../../images/product.jpg'
 
-export default class DemoIndex extends Component {
+export default class ProductIndex extends Component {
     
     render() {
         return (
