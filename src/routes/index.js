@@ -1,20 +1,11 @@
 import React, { Component } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import ProductIndex from '../components/product/ProductIndex'
 import AdminIndex from '../components/admin/AdminIndex'
 import keycloakClient from '../keycloak'
 import Denied from '../components/pages/Denied'
 
 export default class MyRouter extends Component {
-
-    authorize = (roles, component) => {
-        let result = keycloakClient.checkRoles(roles);
-        if (result) {
-            return component
-        } else {
-            return Denied
-        }
-    };
 
     render() {
         return (
